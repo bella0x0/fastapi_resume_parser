@@ -11,7 +11,7 @@ from pdfminer.high_level import extract_text
 
 from scipy import spatial
 from .utils import extract_name, get_email, get_phone
-
+from mangum import Mangum
 from . import utils as utl
 
 
@@ -154,3 +154,7 @@ async def parse(file: UploadFile):
         "languages": languages,
         "raw_data": data,
     }
+
+
+
+handler = Mangum(app)
